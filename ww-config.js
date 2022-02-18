@@ -6,6 +6,9 @@ export default {
   },
   properties: {
     token: {
+      label: {
+        en: "JWT Token"
+      },
       bindable: true,
       type: 'Text'
     }
