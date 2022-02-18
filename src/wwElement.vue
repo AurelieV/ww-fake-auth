@@ -10,7 +10,7 @@ export default {
     emits: ["trigger-event"],
     computed: {
         token() {
-            this.content.token;
+            return this.content.token;
         },
     },
     onMounted() {
