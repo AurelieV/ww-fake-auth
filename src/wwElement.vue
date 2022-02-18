@@ -32,7 +32,7 @@ export default {
         },
         /* wwEditor:start */
         isEditing() {
-            this.$emit("trigger-event", { name: "tokenChanged", event: { token } });
+            this.$emit("trigger-event", { name: "tokenChanged", event: { token: this.token } });
         }
         /* wwEditor:end */
     },
