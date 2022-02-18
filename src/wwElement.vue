@@ -7,7 +7,7 @@ export default {
     props: {
         content: { type: Object, required: true },
     },
-    emits: ["trigger-event"],
+    emits: ['trigger-event'],
     computed: {
         token() {
             return this.content.token;
@@ -15,12 +15,12 @@ export default {
     },
     mounted() {
         console.log("mounted")
-        this.$emit("trigger-event", { name: "token", event: { token: this.token } });
+        this.$emit("trigger-event", { name: "tokenChanged", event: { token: this.token } });
     },
     watch: {
         token(token) {
             console.log("action")
-            this.$emit("trigger-event", { name: "token", event: { token } });
+            this.$emit("trigger-event", { name: "tokenChanged", event: { token } });
         },
     },
 };

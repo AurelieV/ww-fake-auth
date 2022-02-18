@@ -5,7 +5,7 @@ export default {
         },
     },
     triggerEvents: [
-        { name: "token", label: { en: "On token changed" }, event: { token: "" } },
+        { name: "tokenChanged", label: { en: "On token changed" }, event: { token: "" } },
     ],
     properties: {
         token: {
