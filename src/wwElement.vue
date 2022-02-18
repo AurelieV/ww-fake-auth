@@ -3,8 +3,6 @@
 </template>
 
 <script>
-import { computed, watch, onMounted } from "vue";
-
 export default {
     props: {
         content: { type: Object, required: true },
@@ -16,11 +14,11 @@ export default {
         },
     },
     onMounted() {
-        this.$emit("trigger-event", { name: "token", event: this.token });
+        this.$emit("trigger-event", { name: "token", event: { token: this.token } });
     },
     watch: {
         token(token) {
-            this.$emit("trigger-event", { name: "token", event: token });
+            this.$emit("trigger-event", { name: "token", event: { token } });
         },
     },
 };
