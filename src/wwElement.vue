@@ -9,6 +9,7 @@ import jwt_decode from "jwt-decode";
 export default {
     props: {
         content: { type: Object, required: true },
+        uid: { type: String, required: true },
     },
     setup(props) {
         const { setValue } = wwLib.wwVariable.useComponentVariable(props.uid, "user");
