@@ -10,7 +10,7 @@ export default {
         content: { type: Object, required: true },
     },
     setup(props) {
-        const { value, setValue } = wwLib.wwVariable.useComponentVariable(props.uid, "user", undefined, "section");
+        const { setValue } = wwLib.wwVariable.useComponentVariable(props.uid, "user");
         const token = computed(() => props.content.token);
         watch(
             token,
