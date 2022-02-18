@@ -16,10 +16,12 @@ export default {
         watch(
             token,
             (token) => {
+                console.log("watch")
                 context.emit("trigger-event", { name: "token", event: token });
             }
         );
         onMounted(() => {
+            console.log("mounted")
             context.emit("trigger-event", { name: "token", event: token });
         })
     },
