@@ -30,7 +30,7 @@ export default {
             } catch {
               setValue(null)
             }
-        });
+        }, {immediate: true});
     },
 };
 </script>
