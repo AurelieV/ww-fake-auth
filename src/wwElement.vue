@@ -13,13 +13,11 @@ export default {
             return this.content.token;
         },
     },
-    onMounted() {
-        console.log("mount")
+    mounted() {
         this.$emit("trigger-event", { name: "token", event: { token: this.token } });
     },
     watch: {
         token(token) {
-            console.log("watch")
             this.$emit("trigger-event", { name: "token", event: { token } });
         },
     },
