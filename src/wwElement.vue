@@ -14,10 +14,12 @@ export default {
         },
     },
     onMounted() {
+        console.log("mount")
         this.$emit("trigger-event", { name: "token", event: { token: this.token } });
     },
     watch: {
         token(token) {
+            console.log("watch")
             this.$emit("trigger-event", { name: "token", event: { token } });
         },
     },
