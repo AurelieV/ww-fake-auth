@@ -4,25 +4,19 @@
 
 <script>
 import { computed, watch } from "vue";
-import jwt_decode from "jwt-decode";
 
 export default {
     props: {
         content: { type: Object, required: true },
         uid: { type: String, required: true },
     },
-    setup(props) {
-        const { setValue } = wwLib.wwVariable.useComponentVariable(props.uid, "user");
+    emits: ["trigger-event"],
+    setup(props, context) {
         const token = computed(() => props.content.token);
         watch(
             token,
             (token) => {
-                if (!token) setValue(null);
-                try {
-                    setValue(jwt_decode(token));
-                } catch {
-                    setValue(null);
-                }
+                context.emit("trigger-event", { name: "token", event: token });
             },
             { immediate: true }
         );
